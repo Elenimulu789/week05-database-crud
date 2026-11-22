@@ -1,0 +1,113 @@
+
+CREATE project
+{
+  "id": "9de1f68f-e76c-4c30-a2cb-2917a05b9270",
+  "name": "Classroom release",
+  "created_at": "2026-11-19T05:08:29.108606+00:00",
+  "updated_at": "2026-11-19T05:08:29.108606+00:00",
+  "tasks": []
+}
+
+CREATE task
+{
+  "id": "8d26f42a-0288-422e-b052-b37c4a38cbbe",
+  "title": "Review the data model",
+  "status": "todo",
+  "created_at": "2026-11-19T05:08:29.115494+00:00",
+  "updated_at": "2026-11-19T05:08:29.115494+00:00"
+}
+
+READ complete project
+{
+  "id": "9de1f68f-e76c-4c30-a2cb-2917a05b9270",
+  "name": "Classroom release",
+  "created_at": "2026-11-19T05:08:29.108606+00:00",
+  "updated_at": "2026-11-19T05:08:29.115879+00:00",
+  "tasks": [
+    {
+      "id": "8d26f42a-0288-422e-b052-b37c4a38cbbe",
+      "title": "Review the data model",
+      "status": "todo",
+      "created_at": "2026-11-19T05:08:29.115494+00:00",
+      "updated_at": "2026-11-19T05:08:29.115494+00:00"
+    }
+  ]
+}
+
+LIST projects
+[
+  {
+    "id": "9de1f68f-e76c-4c30-a2cb-2917a05b9270",
+    "name": "Classroom release",
+    "created_at": "2026-11-19T05:08:29.108606+00:00",
+    "updated_at": "2026-11-19T05:08:29.115879+00:00"
+  }
+]
+
+UPDATE project
+{
+  "id": "9de1f68f-e76c-4c30-a2cb-2917a05b9270",
+  "name": "Classroom release reviewed",
+  "created_at": "2026-11-19T05:08:29.108606+00:00",
+  "updated_at": "2026-11-19T05:08:29.122737+00:00",
+  "tasks": [
+    {
+      "id": "8d26f42a-0288-422e-b052-b37c4a38cbbe",
+      "title": "Review the data model",
+      "status": "todo",
+      "created_at": "2026-11-19T05:08:29.115494+00:00",
+      "updated_at": "2026-11-19T05:08:29.115494+00:00"
+    }
+  ]
+}
+
+UPDATE task
+{
+  "id": "8d26f42a-0288-422e-b052-b37c4a38cbbe",
+  "title": "Model reviewed",
+  "status": "done",
+  "created_at": "2026-11-19T05:08:29.115494+00:00",
+  "updated_at": "2026-11-19T05:08:29.127714+00:00"
+}
+
+Direct SQLite rows
+{
+  "projects": [
+    {
+      "id": "9de1f68f-e76c-4c30-a2cb-2917a05b9270",
+      "name": "Classroom release reviewed",
+      "created_at": "2026-11-19T05:08:29.108606+00:00",
+      "updated_at": "2026-11-19T05:08:29.127714+00:00"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "8d26f42a-0288-422e-b052-b37c4a38cbbe",
+      "project_id": "9de1f68f-e76c-4c30-a2cb-2917a05b9270",
+      "title": "Model reviewed",
+      "status": "done",
+      "created_at": "2026-11-19T05:08:29.115494+00:00",
+      "updated_at": "2026-11-19T05:08:29.127714+00:00"
+    }
+  ],
+  "foreign_keys": 1
+}
+
+REJECTED orphan insert
+{
+  "error": "FOREIGN KEY constraint failed"
+}
+
+DELETE task
+{
+  "id": "9de1f68f-e76c-4c30-a2cb-2917a05b9270",
+  "name": "Classroom release reviewed",
+  "created_at": "2026-11-19T05:08:29.108606+00:00",
+  "updated_at": "2026-11-19T05:08:29.133615+00:00",
+  "tasks": []
+}
+
+DELETE project and verify cascade
+{
+  "remaining_child_rows": 0
+}

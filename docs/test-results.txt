@@ -1,0 +1,36 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.18, pytest-9.2.0, pluggy-1.7.0 -- /workspace/scratch/7f194fcf3dbb/week05-database-crud/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /workspace/scratch/7f194fcf3dbb/week05-database-crud
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.16.0
+collecting ... collected 19 items
+
+tests/test_crud.py::test_full_crud_and_http_statuses[sql] PASSED         [  5%]
+tests/test_crud.py::test_full_crud_and_http_statuses[redis] PASSED       [ 10%]
+tests/test_crud.py::test_sql_cascade_and_orphan_rejection PASSED         [ 15%]
+tests/test_crud.py::test_sql_transaction_rolls_back PASSED               [ 21%]
+tests/test_crud.py::test_parameterized_text_is_data PASSED               [ 26%]
+tests/test_crud.py::test_document_is_one_embedded_value PASSED           [ 31%]
+tests/test_crud.py::test_concurrent_document_adds_preserve_both_tasks PASSED [ 36%]
+tests/test_crud.py::test_invalid_input_returns_400[payload0-sql] PASSED  [ 42%]
+tests/test_crud.py::test_invalid_input_returns_400[payload0-redis] PASSED [ 47%]
+tests/test_crud.py::test_invalid_input_returns_400[payload1-sql] PASSED  [ 52%]
+tests/test_crud.py::test_invalid_input_returns_400[payload1-redis] PASSED [ 57%]
+tests/test_crud.py::test_invalid_input_returns_400[payload2-sql] PASSED  [ 63%]
+tests/test_crud.py::test_invalid_input_returns_400[payload2-redis] PASSED [ 68%]
+tests/test_crud.py::test_invalid_input_returns_400[payload3-sql] PASSED  [ 73%]
+tests/test_crud.py::test_invalid_input_returns_400[payload3-redis] PASSED [ 78%]
+tests/test_crud.py::test_child_cannot_be_updated_through_other_parent[sql] PASSED [ 84%]
+tests/test_crud.py::test_child_cannot_be_updated_through_other_parent[redis] PASSED [ 89%]
+tests/test_errors.py::test_sql_constraint_errors_are_http_responses PASSED [ 94%]
+tests/test_errors.py::test_redis_unavailable_returns_503 PASSED          [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.11/site-packages/starlette/testclient.py:45
+  /workspace/scratch/7f194fcf3dbb/week05-database-crud/.venv/lib/python3.11/site-packages/starlette/testclient.py:45: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 19 passed, 1 warning in 0.78s =========================

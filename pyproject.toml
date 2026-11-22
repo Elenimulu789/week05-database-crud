@@ -1,0 +1,12 @@
+[project]
+name = "week05-database-crud"
+version = "0.1.0"
+description = "Compare normalized SQLite projects with Redis embedded project documents"
+requires-python = ">=3.11"
+dependencies = ["redis>=5,<7", "fastapi>=0.115,<0.129", "uvicorn>=0.30,<1"]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1", "fakeredis>=2.30,<3"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
